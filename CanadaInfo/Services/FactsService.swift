@@ -30,8 +30,8 @@ class JSONDataMapper {
         let json = JSON(jsonResponse)
         
         // Map JSON Response into Fact Model
-        let pageTitle = json["title"].string ?? ""
-        let rows = json["rows"].array ?? []
+        let pageTitle = json[apiKeyConstants.title].string ?? appDefaults.emptyString
+        let rows = json[apiKeyConstants.rows].array ?? []
         
         var facts = [Fact]()
         for row in rows {

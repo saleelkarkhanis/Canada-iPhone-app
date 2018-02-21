@@ -15,8 +15,8 @@ struct Fact {
     var imageURL: String
     
     init (withJSON jsonObject: JSON) {
-        title = jsonObject["title"].string ?? "--"
-        description = jsonObject["description"].string ?? "--"
-        imageURL = jsonObject["imageHref"].string ?? ""
+        title = jsonObject[apiKeyConstants.title].string ?? appDefaults.defaultText
+        description = jsonObject[apiKeyConstants.description].string ?? appDefaults.defaultText
+        imageURL = jsonObject[apiKeyConstants.imageHref].string ?? appDefaults.emptyString
     }
 }

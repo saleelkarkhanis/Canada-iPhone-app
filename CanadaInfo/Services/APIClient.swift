@@ -18,7 +18,7 @@ class APIClient {
                             successCallback: SuccessCallback?,
                             errorCallback: ErrorCallback?) {
         
-        let apiURLString = AppConstants.apiBaseURL + path
+        let apiURLString = apiBaseURL + path
         
         let request = Alamofire.request(apiURLString, method: .post, parameters: nil, encoding: URLEncoding.default, headers: nil)
             .validate { request, response, data in

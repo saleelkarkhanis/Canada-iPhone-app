@@ -9,7 +9,7 @@
 import UIKit
 import AlamofireImage
 
-class InfoElementTableViewCell: UITableViewCell {
+class FactTableViewCell: UITableViewCell {
 
     var elementTitleLabel = UILabel()
     var elementImage = UIImageView()
@@ -61,9 +61,9 @@ class InfoElementTableViewCell: UITableViewCell {
     }
     
     private func setupImageWithURLString(urlString: String) {
-        elementImage.image = UIImage(named: "placeholder_image")
+        elementImage.image = UIImage(named: imageNames.placeholder)
         if let imageURL = URL(string: urlString) {
-            elementImage.af_setImage(withURL: imageURL, placeholderImage:UIImage(named: "placeholder_image")!)
+            elementImage.af_setImage(withURL: imageURL, placeholderImage:UIImage(named: imageNames.placeholder)!)
         }
         contentView.addSubview(elementImage)
         addConstraintToElementImage()

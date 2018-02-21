@@ -27,7 +27,26 @@ typealias CompletionCallback = (CompletionResponse) -> ()
 typealias SuccessCallback = (URLSessionTask?, Data?) -> Void
 typealias ErrorCallback = (URLSessionTask?, NSError?) -> Void
 
-class AppConstants {
-    static let apiBaseURL = "https://dl.dropboxusercontent.com/s/2iodh4vg0eortkl/"
+let apiBaseURL = "https://dl.dropboxusercontent.com/s/2iodh4vg0eortkl/"
+
+enum imageNames {
+    static let placeholder = "placeholder_image"
 }
+
+enum cellIdentifiers {
+    static let infoElementCell = "infoElementCell"
+}
+
+enum apiKeyConstants {
+    static let rows = "rows"
+    static let title = "title"
+    static let description = "description"
+    static let imageHref = "imageHref"
+}
+
+enum appDefaults {
+    static let emptyString = ""
+    static let defaultText = "--"
+}
+
 

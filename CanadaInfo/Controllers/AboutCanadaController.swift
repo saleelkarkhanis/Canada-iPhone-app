@@ -40,7 +40,7 @@ class AboutCanadaController: UIViewController {
     private func setupTableView() {
         tableView = UITableView(frame: self.view.bounds, style: UITableViewStyle.plain)
         tableView.backgroundColor = UIColor.white
-        tableView.register(InfoElementTableViewCell.self, forCellReuseIdentifier: "infoElementCell")
+        tableView.register(FactTableViewCell.self, forCellReuseIdentifier: cellIdentifiers.infoElementCell)
         tableView.contentInset.top = 20
         self.tableView.tableFooterView = UIView()
         
@@ -65,7 +65,7 @@ extension AboutCanadaController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "infoElementCell", for: indexPath) as! InfoElementTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifiers.infoElementCell, for: indexPath) as! FactTableViewCell
         let currentFact = facts[indexPath.row]
         cell.configureCellForIndex(index: indexPath.row, forFact: currentFact)
         return cell
