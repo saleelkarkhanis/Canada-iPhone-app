@@ -24,7 +24,9 @@ class AboutCanadaController: UIViewController {
     }
     
     private func getFactsData() {
+        showProgressSpinner()
         FactsService.sendGetFactsRequest { [weak self] (response) in
+            hideProgressSpinner()
             switch response {
             case .failure(let error):
                 print("Error - \(error.localizedDescription)")

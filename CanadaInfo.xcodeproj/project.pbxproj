@@ -18,6 +18,7 @@
 		7EC9052B203DDC7F008C7D5C /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC9052A203DDC7F008C7D5C /* APIClient.swift */; };
 		7EC9052E203DDD62008C7D5C /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC9052D203DDD62008C7D5C /* AppConstants.swift */; };
 		7EC90530203DDE5B008C7D5C /* FactsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC9052F203DDE5B008C7D5C /* FactsService.swift */; };
+		7EC90532203E023C008C7D5C /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC90531203E023C008C7D5C /* Utilities.swift */; };
 		E4831590C8B7951224475EC0 /* Pods_CanadaInfoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC9F899B5744F260DBCDA24F /* Pods_CanadaInfoTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +48,7 @@
 		7EC9052A203DDC7F008C7D5C /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		7EC9052D203DDD62008C7D5C /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		7EC9052F203DDE5B008C7D5C /* FactsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactsService.swift; sourceTree = "<group>"; };
+		7EC90531203E023C008C7D5C /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		8D410816242FD6445C602375 /* Pods-CanadaInfoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CanadaInfoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CanadaInfoTests/Pods-CanadaInfoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8F43F4B9C3DF7D0ABE1C36C5 /* Pods-CanadaInfoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CanadaInfoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CanadaInfoTests/Pods-CanadaInfoTests.release.xcconfig"; sourceTree = "<group>"; };
 		AC127757784CD385C3BD2E58 /* Pods_CanadaInfo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CanadaInfo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -167,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				7EC9052D203DDD62008C7D5C /* AppConstants.swift */,
+				7EC90531203E023C008C7D5C /* Utilities.swift */,
 			);
 			path = Comman;
 			sourceTree = "<group>";
@@ -359,12 +362,14 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-CanadaInfo/Pods-CanadaInfo-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -400,6 +405,7 @@
 				7E446233203DB1FE00A7CE2D /* AppDelegate.swift in Sources */,
 				7EC90528203DC300008C7D5C /* FactTableViewCell.swift in Sources */,
 				7EC9052B203DDC7F008C7D5C /* APIClient.swift in Sources */,
+				7EC90532203E023C008C7D5C /* Utilities.swift in Sources */,
 				7EC90523203DB811008C7D5C /* AboutCanadaController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
