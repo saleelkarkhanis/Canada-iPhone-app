@@ -26,8 +26,10 @@ class InfoElementTableViewCell: UITableViewCell {
     }
     
     private func setupTitleLabelWithText(text: String) {
-        elementDescriptionLabel.numberOfLines = 0
-        elementDescriptionLabel.lineBreakMode = .byWordWrapping
+        elementTitleLabel.font = UIFont.systemFont(ofSize: 16.0, weight: .medium)
+        elementTitleLabel.textColor = UIColor.darkGray
+        elementTitleLabel.numberOfLines = 0
+        elementTitleLabel.lineBreakMode = .byWordWrapping
         elementTitleLabel.text = text
         contentView.addSubview(elementTitleLabel)
         addConstraintToTitleLabel()
@@ -41,6 +43,8 @@ class InfoElementTableViewCell: UITableViewCell {
     }
     
     private func setupDescriptionLabelWithText(text: String) {
+        elementDescriptionLabel.font = UIFont.systemFont(ofSize: 15.0)
+        elementDescriptionLabel.textColor = UIColor.lightGray
         elementDescriptionLabel.numberOfLines = 0
         elementDescriptionLabel.lineBreakMode = .byWordWrapping
         elementDescriptionLabel.text = text
@@ -57,11 +61,11 @@ class InfoElementTableViewCell: UITableViewCell {
     }
     
     private func setupImageWithURLString(urlString: String) {
+        elementImage.image = UIImage(named: "placeholder_image")
         if let imageURL = URL(string: urlString) {
             elementImage.af_setImage(withURL: imageURL, placeholderImage:UIImage(named: "placeholder_image")!)
         }
         contentView.addSubview(elementImage)
-        
         addConstraintToElementImage()
     }
     
