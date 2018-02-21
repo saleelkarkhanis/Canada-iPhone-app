@@ -13,6 +13,7 @@
 		7E446248203DB1FE00A7CE2D /* CanadaInfoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E446247203DB1FE00A7CE2D /* CanadaInfoTests.swift */; };
 		7EC90523203DB811008C7D5C /* AboutCanadaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC90521203DB810008C7D5C /* AboutCanadaController.swift */; };
 		7EC90525203DB845008C7D5C /* CanadaInfoElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC90524203DB845008C7D5C /* CanadaInfoElement.swift */; };
+		7EC90528203DC300008C7D5C /* InfoElementTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC90527203DC300008C7D5C /* InfoElementTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		7E446249203DB1FE00A7CE2D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7EC90521203DB810008C7D5C /* AboutCanadaController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutCanadaController.swift; sourceTree = "<group>"; };
 		7EC90524203DB845008C7D5C /* CanadaInfoElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanadaInfoElement.swift; sourceTree = "<group>"; };
+		7EC90527203DC300008C7D5C /* InfoElementTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoElementTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 				7E446232203DB1FE00A7CE2D /* AppDelegate.swift */,
 				7EC90520203DB810008C7D5C /* Controllers */,
 				7EC9051F203DB810008C7D5C /* Model */,
+				7EC90526203DC2E4008C7D5C /* View */,
 				7E446239203DB1FE00A7CE2D /* Assets.xcassets */,
 				7E44623B203DB1FE00A7CE2D /* LaunchScreen.storyboard */,
 				7E44623E203DB1FE00A7CE2D /* Info.plist */,
@@ -110,6 +113,14 @@
 				7EC90521203DB810008C7D5C /* AboutCanadaController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		7EC90526203DC2E4008C7D5C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7EC90527203DC300008C7D5C /* InfoElementTableViewCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -216,6 +227,7 @@
 			files = (
 				7EC90525203DB845008C7D5C /* CanadaInfoElement.swift in Sources */,
 				7E446233203DB1FE00A7CE2D /* AppDelegate.swift in Sources */,
+				7EC90528203DC300008C7D5C /* InfoElementTableViewCell.swift in Sources */,
 				7EC90523203DB811008C7D5C /* AboutCanadaController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

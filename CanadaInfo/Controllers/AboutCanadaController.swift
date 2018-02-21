@@ -20,9 +20,12 @@ class AboutCanadaController: UIViewController {
     private func setupTableView() {
         tableView = UITableView(frame: self.view.bounds, style: UITableViewStyle.plain)
         tableView.backgroundColor = UIColor.white
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "infoElementCell")
+        tableView.register(InfoElementTableViewCell.self, forCellReuseIdentifier: "infoElementCell")
         tableView.contentInset.top = 20
         self.tableView.tableFooterView = UIView()
+        
+        tableView.rowHeight = UITableViewAutomaticDimension;
+        tableView.estimatedRowHeight = 70.0;
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -42,8 +45,8 @@ extension AboutCanadaController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "infoElementCell", for: indexPath)
-        cell.textLabel?.text = "This is row \(indexPath.row)"
+        let cell = tableView.dequeueReusableCell(withIdentifier: "infoElementCell", for: indexPath) as! InfoElementTableViewCell
+        cell.configureCellForIndex(index: indexPath.row)
         return cell
     }
     
