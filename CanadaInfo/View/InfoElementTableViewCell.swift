@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class InfoElementTableViewCell: UITableViewCell {
 
@@ -18,14 +19,13 @@ class InfoElementTableViewCell: UITableViewCell {
         super.awakeFromNib()
     }
     
-    func configureCellForIndex(index: Int) {
-        setupImageWithURLString(urlString: "")
-        setupTitleLabelWithText(text: "Title --- \(index)")
-        setupDescriptionLabelWithText(text: "Description ----- \(index)")
+    func configureCellForIndex(index: Int, forFact fact: Fact) {
+        setupImageWithURLString(urlString: fact.imageURL)
+        setupTitleLabelWithText(text: fact.title)
+        setupDescriptionLabelWithText(text: fact.description)
     }
     
     private func setupTitleLabelWithText(text: String) {
-    
         elementDescriptionLabel.numberOfLines = 0
         elementDescriptionLabel.lineBreakMode = .byWordWrapping
         elementTitleLabel.text = text
@@ -57,8 +57,11 @@ class InfoElementTableViewCell: UITableViewCell {
     }
     
     private func setupImageWithURLString(urlString: String) {
-        elementImage.image = UIImage(named:"placeholder_image")
+        if let imageURL = URL(string: urlString) {
+            elementImage.af_setImage(withURL: imageURL, placeholderImage:UIImage(named: "placeholder_image")!)
+        }
         contentView.addSubview(elementImage)
+        
         addConstraintToElementImage()
     }
     

@@ -11,6 +11,7 @@ import UIKit
 class AboutCanadaController: UIViewController {
 
     var tableView = UITableView()
+    var facts = [Fact]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,13 +24,14 @@ class AboutCanadaController: UIViewController {
     }
     
     private func getFactsData() {
-        FactsService.sendGetFactsRequest { (response) in
+        FactsService.sendGetFactsRequest { [weak self] (response) in
             switch response {
             case .failure(let error):
                 print("Error - \(error.localizedDescription)")
             case .success(let result):
                 if let output = result as? ([Fact], String) {
-                    // Do refresh view with data
+                    self?.facts = output.0
+                    self?.tableView.reloadData()
                 }
             }
         }
@@ -59,12 +61,13 @@ extension AboutCanadaController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return facts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "infoElementCell", for: indexPath) as! InfoElementTableViewCell
-        cell.configureCellForIndex(index: indexPath.row)
+        let currentFact = facts[indexPath.row]
+        cell.configureCellForIndex(index: indexPath.row, forFact: currentFact)
         return cell
     }
     
