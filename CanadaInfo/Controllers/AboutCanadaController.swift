@@ -17,6 +17,24 @@ class AboutCanadaController: UIViewController {
         setupTableView()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        getFactsData()
+    }
+    
+    private func getFactsData() {
+        FactsService.sendGetFactsRequest { (response) in
+            switch response {
+            case .failure(let error):
+                print("Error - \(error.localizedDescription)")
+            case .success(let result):
+                if let output = result as? ([Fact], String) {
+                    // Do refresh view with data
+                }
+            }
+        }
+    }
+    
     private func setupTableView() {
         tableView = UITableView(frame: self.view.bounds, style: UITableViewStyle.plain)
         tableView.backgroundColor = UIColor.white

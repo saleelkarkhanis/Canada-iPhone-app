@@ -13,8 +13,11 @@
 		7E446248203DB1FE00A7CE2D /* CanadaInfoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E446247203DB1FE00A7CE2D /* CanadaInfoTests.swift */; };
 		7EAB07D6E2A2305A09AFA71B /* Pods_CanadaInfo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC127757784CD385C3BD2E58 /* Pods_CanadaInfo.framework */; };
 		7EC90523203DB811008C7D5C /* AboutCanadaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC90521203DB810008C7D5C /* AboutCanadaController.swift */; };
-		7EC90525203DB845008C7D5C /* CanadaInfoElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC90524203DB845008C7D5C /* CanadaInfoElement.swift */; };
+		7EC90525203DB845008C7D5C /* Fact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC90524203DB845008C7D5C /* Fact.swift */; };
 		7EC90528203DC300008C7D5C /* InfoElementTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC90527203DC300008C7D5C /* InfoElementTableViewCell.swift */; };
+		7EC9052B203DDC7F008C7D5C /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC9052A203DDC7F008C7D5C /* APIClient.swift */; };
+		7EC9052E203DDD62008C7D5C /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC9052D203DDD62008C7D5C /* AppConstants.swift */; };
+		7EC90530203DDE5B008C7D5C /* FactsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC9052F203DDE5B008C7D5C /* FactsService.swift */; };
 		E4831590C8B7951224475EC0 /* Pods_CanadaInfoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC9F899B5744F260DBCDA24F /* Pods_CanadaInfoTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -39,8 +42,11 @@
 		7E446247203DB1FE00A7CE2D /* CanadaInfoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanadaInfoTests.swift; sourceTree = "<group>"; };
 		7E446249203DB1FE00A7CE2D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7EC90521203DB810008C7D5C /* AboutCanadaController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutCanadaController.swift; sourceTree = "<group>"; };
-		7EC90524203DB845008C7D5C /* CanadaInfoElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanadaInfoElement.swift; sourceTree = "<group>"; };
+		7EC90524203DB845008C7D5C /* Fact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fact.swift; sourceTree = "<group>"; };
 		7EC90527203DC300008C7D5C /* InfoElementTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoElementTableViewCell.swift; sourceTree = "<group>"; };
+		7EC9052A203DDC7F008C7D5C /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		7EC9052D203DDD62008C7D5C /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		7EC9052F203DDE5B008C7D5C /* FactsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactsService.swift; sourceTree = "<group>"; };
 		8D410816242FD6445C602375 /* Pods-CanadaInfoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CanadaInfoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CanadaInfoTests/Pods-CanadaInfoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8F43F4B9C3DF7D0ABE1C36C5 /* Pods-CanadaInfoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CanadaInfoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CanadaInfoTests/Pods-CanadaInfoTests.release.xcconfig"; sourceTree = "<group>"; };
 		AC127757784CD385C3BD2E58 /* Pods_CanadaInfo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CanadaInfo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -103,6 +109,8 @@
 			isa = PBXGroup;
 			children = (
 				7E446232203DB1FE00A7CE2D /* AppDelegate.swift */,
+				7EC9052C203DDD51008C7D5C /* Comman */,
+				7EC90529203DDC41008C7D5C /* Services */,
 				7EC90520203DB810008C7D5C /* Controllers */,
 				7EC9051F203DB810008C7D5C /* Model */,
 				7EC90526203DC2E4008C7D5C /* View */,
@@ -125,7 +133,7 @@
 		7EC9051F203DB810008C7D5C /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				7EC90524203DB845008C7D5C /* CanadaInfoElement.swift */,
+				7EC90524203DB845008C7D5C /* Fact.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -144,6 +152,23 @@
 				7EC90527203DC300008C7D5C /* InfoElementTableViewCell.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		7EC90529203DDC41008C7D5C /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				7EC9052A203DDC7F008C7D5C /* APIClient.swift */,
+				7EC9052F203DDE5B008C7D5C /* FactsService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		7EC9052C203DDD51008C7D5C /* Comman */ = {
+			isa = PBXGroup;
+			children = (
+				7EC9052D203DDD62008C7D5C /* AppConstants.swift */,
+			);
+			path = Comman;
 			sourceTree = "<group>";
 		};
 		8F019DACAE099E77F4CA888E /* Frameworks */ = {
@@ -369,9 +394,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7EC90525203DB845008C7D5C /* CanadaInfoElement.swift in Sources */,
+				7EC90525203DB845008C7D5C /* Fact.swift in Sources */,
+				7EC9052E203DDD62008C7D5C /* AppConstants.swift in Sources */,
+				7EC90530203DDE5B008C7D5C /* FactsService.swift in Sources */,
 				7E446233203DB1FE00A7CE2D /* AppDelegate.swift in Sources */,
 				7EC90528203DC300008C7D5C /* InfoElementTableViewCell.swift in Sources */,
+				7EC9052B203DDC7F008C7D5C /* APIClient.swift in Sources */,
 				7EC90523203DB811008C7D5C /* AboutCanadaController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
