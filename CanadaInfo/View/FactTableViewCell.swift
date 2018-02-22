@@ -13,6 +13,7 @@ class FactTableViewCell: UITableViewCell {
 
     override func layoutSubviews() {
         super.layoutSubviews()
+        // To Solve issue of Multiline text only showing one line on first load
         elementDescriptionLabel.preferredMaxLayoutWidth = elementDescriptionLabel.frame.width
     }
     
