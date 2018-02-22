@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7E1E80C3203ECEB6000846D8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E1E80C2203ECEB6000846D8 /* LaunchScreen.storyboard */; };
 		7E446233203DB1FE00A7CE2D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E446232203DB1FE00A7CE2D /* AppDelegate.swift */; };
 		7E44623A203DB1FE00A7CE2D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E446239203DB1FE00A7CE2D /* Assets.xcassets */; };
-		7E44623D203DB1FE00A7CE2D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E44623B203DB1FE00A7CE2D /* LaunchScreen.storyboard */; };
 		7E446248203DB1FE00A7CE2D /* CanadaInfoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E446247203DB1FE00A7CE2D /* CanadaInfoTests.swift */; };
 		7EAB07D6E2A2305A09AFA71B /* Pods_CanadaInfo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC127757784CD385C3BD2E58 /* Pods_CanadaInfo.framework */; };
 		7EC90523203DB811008C7D5C /* AboutCanadaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC90521203DB810008C7D5C /* AboutCanadaController.swift */; };
@@ -35,10 +35,10 @@
 
 /* Begin PBXFileReference section */
 		47778EE0FE0B829A2BBCC36F /* Pods-CanadaInfo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CanadaInfo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CanadaInfo/Pods-CanadaInfo.debug.xcconfig"; sourceTree = "<group>"; };
+		7E1E80C2203ECEB6000846D8 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7E44622F203DB1FE00A7CE2D /* CanadaInfo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CanadaInfo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E446232203DB1FE00A7CE2D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7E446239203DB1FE00A7CE2D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		7E44623C203DB1FE00A7CE2D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7E44623E203DB1FE00A7CE2D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7E446243203DB1FE00A7CE2D /* CanadaInfoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CanadaInfoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E446247203DB1FE00A7CE2D /* CanadaInfoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanadaInfoTests.swift; sourceTree = "<group>"; };
@@ -119,7 +119,7 @@
 				7EC9051F203DB810008C7D5C /* Model */,
 				7EC90526203DC2E4008C7D5C /* View */,
 				7E446239203DB1FE00A7CE2D /* Assets.xcassets */,
-				7E44623B203DB1FE00A7CE2D /* LaunchScreen.storyboard */,
+				7E1E80C2203ECEB6000846D8 /* LaunchScreen.storyboard */,
 				7E44623E203DB1FE00A7CE2D /* Info.plist */,
 			);
 			path = CanadaInfo;
@@ -283,8 +283,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7E44623D203DB1FE00A7CE2D /* LaunchScreen.storyboard in Resources */,
 				7E44623A203DB1FE00A7CE2D /* Assets.xcassets in Resources */,
+				7E1E80C3203ECEB6000846D8 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -440,17 +440,6 @@
 		};
 /* End PBXTargetDependency section */
 
-/* Begin PBXVariantGroup section */
-		7E44623B203DB1FE00A7CE2D /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				7E44623C203DB1FE00A7CE2D /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
 /* Begin XCBuildConfiguration section */
 		7E44624A203DB1FF00A7CE2D /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -500,7 +489,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -551,7 +540,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -566,6 +555,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = CanadaInfo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = saleelkarkhanis.CanadaInfo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -581,6 +571,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = CanadaInfo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = saleelkarkhanis.CanadaInfo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
