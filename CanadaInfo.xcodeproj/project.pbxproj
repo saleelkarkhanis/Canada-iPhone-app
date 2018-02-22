@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7E1E80C3203ECEB6000846D8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E1E80C2203ECEB6000846D8 /* LaunchScreen.storyboard */; };
+		7E1E80C6203ED3A5000846D8 /* UILabel+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1E80C5203ED3A5000846D8 /* UILabel+Helper.swift */; };
 		7E446233203DB1FE00A7CE2D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E446232203DB1FE00A7CE2D /* AppDelegate.swift */; };
 		7E44623A203DB1FE00A7CE2D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E446239203DB1FE00A7CE2D /* Assets.xcassets */; };
 		7E446248203DB1FE00A7CE2D /* CanadaInfoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E446247203DB1FE00A7CE2D /* CanadaInfoTests.swift */; };
@@ -36,6 +37,7 @@
 /* Begin PBXFileReference section */
 		47778EE0FE0B829A2BBCC36F /* Pods-CanadaInfo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CanadaInfo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CanadaInfo/Pods-CanadaInfo.debug.xcconfig"; sourceTree = "<group>"; };
 		7E1E80C2203ECEB6000846D8 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7E1E80C5203ED3A5000846D8 /* UILabel+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Helper.swift"; sourceTree = "<group>"; };
 		7E44622F203DB1FE00A7CE2D /* CanadaInfo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CanadaInfo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E446232203DB1FE00A7CE2D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7E446239203DB1FE00A7CE2D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -87,6 +89,14 @@
 				8F43F4B9C3DF7D0ABE1C36C5 /* Pods-CanadaInfoTests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		7E1E80C4203ED396000846D8 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7E1E80C5203ED3A5000846D8 /* UILabel+Helper.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		7E446226203DB1FE00A7CE2D = {
@@ -171,6 +181,7 @@
 		7EC9052C203DDD51008C7D5C /* Comman */ = {
 			isa = PBXGroup;
 			children = (
+				7E1E80C4203ED396000846D8 /* Extensions */,
 				7EC9052D203DDD62008C7D5C /* AppConstants.swift */,
 				7EC90531203E023C008C7D5C /* Utilities.swift */,
 			);
@@ -417,6 +428,7 @@
 				7E446233203DB1FE00A7CE2D /* AppDelegate.swift in Sources */,
 				7EC90528203DC300008C7D5C /* FactTableViewCell.swift in Sources */,
 				7EC9052B203DDC7F008C7D5C /* APIClient.swift in Sources */,
+				7E1E80C6203ED3A5000846D8 /* UILabel+Helper.swift in Sources */,
 				7EC90532203E023C008C7D5C /* Utilities.swift in Sources */,
 				7EC90523203DB811008C7D5C /* AboutCanadaController.swift in Sources */,
 			);

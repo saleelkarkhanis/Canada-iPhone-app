@@ -30,8 +30,7 @@ class FactTableViewCell: UITableViewCell {
     private func setupTitleLabelWithText(text: String) {
         elementTitleLabel.font = UIFont.systemFont(ofSize: 16.0)
         elementTitleLabel.textColor = UIColor.darkGray
-        elementTitleLabel.numberOfLines = 0
-        elementTitleLabel.lineBreakMode = .byWordWrapping
+        elementTitleLabel.multiline()
         elementTitleLabel.text = text
         contentView.addSubview(elementTitleLabel)
         addConstraintToTitleLabel()
@@ -51,8 +50,7 @@ class FactTableViewCell: UITableViewCell {
     private func setupDescriptionLabelWithText(text: String) {
         elementDescriptionLabel.font = UIFont.systemFont(ofSize: 15.0)
         elementDescriptionLabel.textColor = UIColor.lightGray
-        elementDescriptionLabel.numberOfLines = 0
-        elementDescriptionLabel.lineBreakMode = .byWordWrapping
+        elementDescriptionLabel.multiline()
         elementDescriptionLabel.text = text
         contentView.addSubview(elementDescriptionLabel)
         addConstraintToDescriptionLabel()
@@ -83,7 +81,6 @@ class FactTableViewCell: UITableViewCell {
     
     private func addConstraintToElementImage() {
         elementImage.translatesAutoresizingMaskIntoConstraints = false
-        
         let leadingConstraint = NSLayoutConstraint(item: elementImage, attribute: NSLayoutAttribute.leading, relatedBy: NSLayoutRelation.equal, toItem: elementImage.superview!, attribute: NSLayoutAttribute.leading, multiplier: 1.0, constant: 10)
         
         let topConstraint = NSLayoutConstraint(item: elementImage, attribute: NSLayoutAttribute.top, relatedBy: NSLayoutRelation.equal, toItem: elementImage.superview!, attribute: NSLayoutAttribute.top, multiplier: 1.0, constant: 10)
