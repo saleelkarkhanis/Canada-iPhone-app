@@ -47,7 +47,7 @@ class AboutCanadaController: UIViewController {
     }
     
     private func setupTableView() {
-        tableView = UITableView(frame: self.view.bounds, style: UITableViewStyle.plain)
+        tableView = UITableView()
         tableView.register(FactTableViewCell.self, forCellReuseIdentifier: cellIdentifiers.infoElementCell)
         tableView.contentInset.top = tableViewTopContentInset
         self.tableView.tableFooterView = UIView()
@@ -59,6 +59,15 @@ class AboutCanadaController: UIViewController {
         tableView.dataSource = self
         
         view.addSubview(tableView)
+        addConstraintsToTableView()
+    }
+    
+    private func addConstraintsToTableView() {
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 0).isActive = true
+        tableView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: 0).isActive = true
+        tableView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 0).isActive = true
+        tableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 0).isActive = true
     }
         
     private func setupNavigationItem() {
