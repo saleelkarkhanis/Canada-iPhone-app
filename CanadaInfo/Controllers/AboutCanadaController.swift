@@ -50,7 +50,8 @@ class AboutCanadaController: UIViewController {
         tableView = UITableView()
         tableView.register(FactTableViewCell.self, forCellReuseIdentifier: cellIdentifiers.infoElementCell)
         tableView.contentInset.top = tableViewTopContentInset
-        self.tableView.tableFooterView = UIView()
+        tableView.separatorInset = UIEdgeInsets.zero
+        tableView.tableFooterView = UIView()
         
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = tableViewEstimatedRowHeight
