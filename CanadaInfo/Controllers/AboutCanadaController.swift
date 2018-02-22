@@ -13,8 +13,6 @@ class AboutCanadaController: UIViewController {
     private let tableViewTopContentInset: CGFloat = 20
     private let tableViewEstimatedRowHeight: CGFloat = 70
     private let defaultNavigationTitle = "Home"
-    private let defaultErrorAlertTitle = "Error"
-    private let defaultErrorAlertOKButtonTitle = "OK"
     
     var tableView = UITableView()
     var facts = [Fact]()
@@ -32,17 +30,17 @@ class AboutCanadaController: UIViewController {
     
     private func getFactsData() {
         showProgressSpinner()
-        FactsService.sendGetFactsRequest { [weak self] (response) in
+        FactsService.sendGetFactsRequest { [unowned self] (response) in
             hideProgressSpinner()
             switch response {
             case .failure(let error):
-                self?.showErrorAlertWithMessage(message: error.localizedDescription)
+                showErrorAlertWithMessage(message: error.localizedDescription, onViewController: self)
             case .success(let result):
                 if let output = result as? ([Fact], String) {
                     // Update View to show data coming feom Server
-                    self?.title = output.1
-                    self?.facts = output.0
-                    self?.tableView.reloadData()
+                    self.title = output.1
+                    self.facts = output.0
+                    self.tableView.reloadData()
                 }
             }
         }
@@ -62,14 +60,7 @@ class AboutCanadaController: UIViewController {
         
         view.addSubview(tableView)
     }
-    
-    private func showErrorAlertWithMessage(message: String) {
-        let errorAlertController = UIAlertController(title: defaultErrorAlertTitle, message: message, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: defaultErrorAlertOKButtonTitle, style: .default, handler: nil)
-        errorAlertController.addAction(okAction)
-        self.present(errorAlertController, animated: true, completion: nil)
-    }
-    
+        
     private func setupNavigationItem() {
         let refreshButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.refresh, target: self, action: #selector(refreshButtonAction))
         self.navigationItem.rightBarButtonItem = refreshButton

@@ -49,4 +49,13 @@ enum appDefaults {
     static let defaultText = "--"
 }
 
+enum apiEndpoints {
+    static let facts = "facts.json"
+}
+
+enum errorAlertConstants {
+    static let title = "Error"
+    static let oKButtonTitle = "OK"
+}
+
 

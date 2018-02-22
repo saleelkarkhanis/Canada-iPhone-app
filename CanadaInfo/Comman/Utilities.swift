@@ -28,3 +28,10 @@ func hideProgressSpinner() {
         SVProgressHUD.dismiss()
     }
 }
+
+func showErrorAlertWithMessage(message: String, onViewController vc: UIViewController) {
+    let errorAlertController = UIAlertController(title: errorAlertConstants.title, message: message, preferredStyle: .alert)
+    let okAction = UIAlertAction(title: errorAlertConstants.oKButtonTitle, style: .default, handler: nil)
+    errorAlertController.addAction(okAction)
+    vc.present(errorAlertController, animated: true, completion: nil)
+}
