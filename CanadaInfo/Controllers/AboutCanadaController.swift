@@ -10,6 +10,9 @@ import UIKit
 
 class AboutCanadaController: UIViewController {
 
+    private let tableViewTopContentInset: CGFloat = 20
+    private let tableViewEstimatedRowHeight: CGFloat = 70
+    
     var tableView = UITableView()
     var facts = [Fact]()
     
@@ -29,9 +32,11 @@ class AboutCanadaController: UIViewController {
             hideProgressSpinner()
             switch response {
             case .failure(let error):
-                print("Error - \(error.localizedDescription)")
+                self?.showErrorAlertWithMessage(message: error.localizedDescription)
             case .success(let result):
                 if let output = result as? ([Fact], String) {
+                    // Update View to show data coming feom Server
+                    self?.navigationItem.title = output.1
                     self?.facts = output.0
                     self?.tableView.reloadData()
                 }
@@ -41,18 +46,24 @@ class AboutCanadaController: UIViewController {
     
     private func setupTableView() {
         tableView = UITableView(frame: self.view.bounds, style: UITableViewStyle.plain)
-        tableView.backgroundColor = UIColor.white
         tableView.register(FactTableViewCell.self, forCellReuseIdentifier: cellIdentifiers.infoElementCell)
-        tableView.contentInset.top = 20
+        tableView.contentInset.top = tableViewTopContentInset
         self.tableView.tableFooterView = UIView()
         
-        tableView.rowHeight = UITableViewAutomaticDimension;
-        tableView.estimatedRowHeight = 70.0;
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = tableViewEstimatedRowHeight
         
         tableView.delegate = self
         tableView.dataSource = self
         
         view.addSubview(tableView)
+    }
+    
+    private func showErrorAlertWithMessage(message: String) {
+        let errorAlertController = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        errorAlertController.addAction(okAction)
+        self.present(errorAlertController, animated: true, completion: nil)
     }
 }
 
@@ -72,6 +83,5 @@ extension AboutCanadaController: UITableViewDelegate, UITableViewDataSource {
         cell.configureCellForIndex(index: indexPath.row, forFact: currentFact)
         return cell
     }
-    
 }
 
