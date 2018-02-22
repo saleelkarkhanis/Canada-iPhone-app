@@ -12,7 +12,7 @@ import SwiftyJSON
 class FactsService {
     
     static func sendGetFactsRequest(_ completionCallback: @escaping CompletionCallback) {
-        APIClient.sendRequest(.get, path: "facts.json", successCallback: { (task, jsonData) in
+        APIClient.sendRequest(.get, path: apiEndpoints.facts, successCallback: { (task, jsonData) in
             if let jsonData = jsonData {
                 JSONDataMapper.mapFactsData(fromResponse: jsonData, completion: completionCallback)
             }
@@ -28,7 +28,8 @@ class JSONDataMapper {
     
     static func mapFactsData(fromResponse jsonResponse: Data, completion: CompletionCallback) {
         let json = JSON(jsonResponse)
-        if json != JSON.null {
+        if json != JSON.null { // If JSON Coming from server is Null then do not call Success block
+            
             // Map JSON Response into Fact Model
             let pageTitle = json[apiKeyConstants.title].string ?? appDefaults.emptyString
             let rows = json[apiKeyConstants.rows].array ?? []
