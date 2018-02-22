@@ -11,6 +11,11 @@ import AlamofireImage
 
 class FactTableViewCell: UITableViewCell {
 
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        elementDescriptionLabel.preferredMaxLayoutWidth = elementDescriptionLabel.frame.width
+    }
+    
     var elementTitleLabel = UILabel()
     var elementImage = UIImageView()
     var elementDescriptionLabel = UILabel()
@@ -22,7 +27,7 @@ class FactTableViewCell: UITableViewCell {
     }
     
     private func setupTitleLabelWithText(text: String) {
-        elementTitleLabel.font = UIFont.systemFont(ofSize: 16.0, weight: .medium)
+        elementTitleLabel.font = UIFont.systemFont(ofSize: 16.0)
         elementTitleLabel.textColor = UIColor.darkGray
         elementTitleLabel.numberOfLines = 0
         elementTitleLabel.lineBreakMode = .byWordWrapping
@@ -33,9 +38,13 @@ class FactTableViewCell: UITableViewCell {
     
     private func addConstraintToTitleLabel() {
         elementTitleLabel.translatesAutoresizingMaskIntoConstraints = false
-        elementTitleLabel.leadingAnchor.constraint(equalTo: elementImage.trailingAnchor, constant: 10).isActive = true
-        elementTitleLabel.trailingAnchor.constraint(equalTo: elementTitleLabel.superview!.trailingAnchor, constant: -10).isActive = true
-        elementTitleLabel.topAnchor.constraint(equalTo: elementTitleLabel.superview!.topAnchor, constant: 10).isActive = true
+        let leadingConstraint = NSLayoutConstraint(item: elementTitleLabel, attribute: NSLayoutAttribute.leading, relatedBy: NSLayoutRelation.equal, toItem: elementImage, attribute: NSLayoutAttribute.trailing, multiplier: 1.0, constant: 10)
+        
+        let trailingConstraint = NSLayoutConstraint(item: elementTitleLabel, attribute: NSLayoutAttribute.trailing, relatedBy: NSLayoutRelation.equal, toItem: elementTitleLabel.superview!, attribute: NSLayoutAttribute.trailing, multiplier: 1.0, constant: -10)
+        
+        let topConstraint = NSLayoutConstraint(item: elementTitleLabel, attribute: NSLayoutAttribute.top, relatedBy: NSLayoutRelation.equal, toItem: elementImage, attribute: NSLayoutAttribute.top, multiplier: 1.0, constant: 0)
+        
+        contentView.addConstraints([leadingConstraint, trailingConstraint, topConstraint])
     }
     
     private func setupDescriptionLabelWithText(text: String) {
@@ -50,10 +59,16 @@ class FactTableViewCell: UITableViewCell {
     
     private func addConstraintToDescriptionLabel() {
         elementDescriptionLabel.translatesAutoresizingMaskIntoConstraints = false
-        elementDescriptionLabel.topAnchor.constraint(equalTo: elementTitleLabel.bottomAnchor, constant: 10).isActive = true
-        elementDescriptionLabel.leadingAnchor.constraint(equalTo: elementTitleLabel.leadingAnchor, constant: 0).isActive = true
-        elementDescriptionLabel.trailingAnchor.constraint(equalTo: elementTitleLabel.trailingAnchor, constant: 0).isActive = true
-        elementDescriptionLabel.superview!.bottomAnchor.constraint(equalTo: elementDescriptionLabel.bottomAnchor, constant: 10).isActive = true
+        let leadingConstraint = NSLayoutConstraint(item: elementDescriptionLabel, attribute: NSLayoutAttribute.leading, relatedBy: NSLayoutRelation.equal, toItem: elementTitleLabel, attribute: NSLayoutAttribute.leading, multiplier: 1.0, constant: 0)
+        
+        let trailingConstraint = NSLayoutConstraint(item: elementDescriptionLabel, attribute: NSLayoutAttribute.trailing, relatedBy: NSLayoutRelation.equal, toItem: elementTitleLabel, attribute: NSLayoutAttribute.trailing, multiplier: 1.0, constant: 0)
+        
+        let topConstraint = NSLayoutConstraint(item: elementDescriptionLabel, attribute: NSLayoutAttribute.top, relatedBy: NSLayoutRelation.equal, toItem: elementTitleLabel, attribute: NSLayoutAttribute.bottom, multiplier: 1.0, constant: 10)
+        
+        
+        let bottomConstraint = NSLayoutConstraint(item: elementDescriptionLabel.superview!, attribute: NSLayoutAttribute.bottom, relatedBy: NSLayoutRelation.greaterThanOrEqual, toItem: elementDescriptionLabel, attribute: NSLayoutAttribute.bottom, multiplier: 1.0, constant: 10)
+        
+        contentView.addConstraints([leadingConstraint, trailingConstraint, topConstraint, bottomConstraint])
     }
     
     private func setupImageWithURLString(urlString: String) {
@@ -67,9 +82,16 @@ class FactTableViewCell: UITableViewCell {
     
     private func addConstraintToElementImage() {
         elementImage.translatesAutoresizingMaskIntoConstraints = false
-        elementImage.topAnchor.constraint(equalTo: elementImage.superview!.topAnchor, constant: 10).isActive = true
-        elementImage.leadingAnchor.constraint(equalTo: elementImage.superview!.leadingAnchor, constant: 10).isActive = true
-        elementImage.widthAnchor.constraint(equalToConstant: 50).isActive = true
-        elementImage.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        
+        let leadingConstraint = NSLayoutConstraint(item: elementImage, attribute: NSLayoutAttribute.leading, relatedBy: NSLayoutRelation.equal, toItem: elementImage.superview!, attribute: NSLayoutAttribute.leading, multiplier: 1.0, constant: 10)
+        
+        let topConstraint = NSLayoutConstraint(item: elementImage, attribute: NSLayoutAttribute.top, relatedBy: NSLayoutRelation.equal, toItem: elementImage.superview!, attribute: NSLayoutAttribute.top, multiplier: 1.0, constant: 10)
+        
+        
+        let heightConstraint = NSLayoutConstraint(item: elementImage, attribute: NSLayoutAttribute.height, relatedBy: NSLayoutRelation.equal, toItem: nil, attribute: NSLayoutAttribute.notAnAttribute, multiplier: 1.0, constant: 50)
+        
+        let widthConstraint = NSLayoutConstraint(item: elementImage, attribute: NSLayoutAttribute.width, relatedBy: NSLayoutRelation.equal, toItem: nil, attribute: NSLayoutAttribute.notAnAttribute, multiplier: 1.0, constant: 50)
+        
+        contentView.addConstraints([leadingConstraint, topConstraint, widthConstraint, heightConstraint])
     }
 }
