@@ -15,10 +15,6 @@ class FactTableViewCell: UITableViewCell {
     var elementImage = UIImageView()
     var elementDescriptionLabel = UILabel()
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-    
     func configureCellForIndex(index: Int, forFact fact: Fact) {
         setupImageWithURLString(urlString: fact.imageURL)
         setupTitleLabelWithText(text: fact.title)

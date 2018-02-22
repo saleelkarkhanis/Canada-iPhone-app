@@ -16,9 +16,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
+        // Create Navigation Controller with AboutCanadaController added in navigation stack and set it to window rootcontroller
         let navigationController = UINavigationController()
         let aboutCanadaVC = AboutCanadaController()
-        
         
         window = UIWindow(frame: UIScreen.main.bounds)
         window!.backgroundColor = UIColor.white
