@@ -7,30 +7,51 @@
 //
 
 import XCTest
+import SwiftyJSON
+
 @testable import CanadaInfo
 
 class CanadaInfoTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
     }
     
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    func testFactsResponseJSON() {
+        
+        let bundle = Bundle(for: type(of: self))
+        guard let factsJSONFilePath = bundle.path(forResource: "facts", ofType: "json"),
+            let factsData = try? Data(contentsOf: URL(fileURLWithPath: factsJSONFilePath))
+            else {
+                XCTFail("JSON Data Not Available")
+                return
+        }
+        do {
+            let factsJsonObject = try JSON(data: factsData)
+            let pageTitle = factsJsonObject["title"].string
+            if pageTitle == nil {
+                XCTFail("Missing Required Data")
+            }
+            
+            let rows = factsJsonObject["rows"].array
+            if rows == nil {
+                XCTFail("Missing Required Data")
+            }
+        }
+        catch{
+            XCTFail("Data Not Convirtible to JSON")
         }
     }
     
+    func testFactsPageTitle() {
+        
+    }
+    
+    func testFactsList() {
+        
+    }
 }
