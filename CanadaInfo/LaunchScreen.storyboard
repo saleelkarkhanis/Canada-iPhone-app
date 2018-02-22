@@ -21,8 +21,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Know some interesting facts about Canada" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xfu-z4-KIi">
-                                <rect key="frame" x="32" y="324" width="311" height="19.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Know some interesting facts about Canada" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xfu-z4-KIi">
+                                <rect key="frame" x="10" y="324" width="355" height="19.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -30,6 +30,8 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Xfu-z4-KIi" secondAttribute="trailing" constant="10" id="0yu-qh-fbw"/>
+                            <constraint firstItem="Xfu-z4-KIi" firstAttribute="leading" secondItem="EGe-ov-WX9" secondAttribute="leading" constant="10" id="MIS-9d-KQg"/>
                             <constraint firstItem="Xfu-z4-KIi" firstAttribute="centerY" secondItem="EGe-ov-WX9" secondAttribute="centerY" id="c2H-dR-pId"/>
                             <constraint firstItem="Xfu-z4-KIi" firstAttribute="centerX" secondItem="EGe-ov-WX9" secondAttribute="centerX" id="kBR-bh-KGV"/>
                         </constraints>
