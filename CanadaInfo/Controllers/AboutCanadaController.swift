@@ -12,6 +12,9 @@ class AboutCanadaController: UIViewController {
 
     private let tableViewTopContentInset: CGFloat = 20
     private let tableViewEstimatedRowHeight: CGFloat = 70
+    private let defaultNavigationTitle = "Home"
+    private let defaultErrorAlertTitle = "Error"
+    private let defaultErrorAlertOKButtonTitle = "OK"
     
     var tableView = UITableView()
     var facts = [Fact]()
@@ -19,6 +22,7 @@ class AboutCanadaController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
+        setupNavigationItem()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -36,7 +40,7 @@ class AboutCanadaController: UIViewController {
             case .success(let result):
                 if let output = result as? ([Fact], String) {
                     // Update View to show data coming feom Server
-                    self?.navigationItem.title = output.1
+                    self?.title = output.1
                     self?.facts = output.0
                     self?.tableView.reloadData()
                 }
@@ -60,10 +64,20 @@ class AboutCanadaController: UIViewController {
     }
     
     private func showErrorAlertWithMessage(message: String) {
-        let errorAlertController = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        let errorAlertController = UIAlertController(title: defaultErrorAlertTitle, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: defaultErrorAlertOKButtonTitle, style: .default, handler: nil)
         errorAlertController.addAction(okAction)
         self.present(errorAlertController, animated: true, completion: nil)
+    }
+    
+    private func setupNavigationItem() {
+        let refreshButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.refresh, target: self, action: #selector(refreshButtonAction))
+        self.navigationItem.rightBarButtonItem = refreshButton
+        self.title = defaultNavigationTitle // This is Default Navigation title to be shown in case title does not come from Server
+    }
+    
+    @objc func refreshButtonAction() {
+        getFactsData()
     }
 }
 
