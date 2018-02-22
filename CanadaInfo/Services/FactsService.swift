@@ -28,16 +28,17 @@ class JSONDataMapper {
     
     static func mapFactsData(fromResponse jsonResponse: Data, completion: CompletionCallback) {
         let json = JSON(jsonResponse)
-        
-        // Map JSON Response into Fact Model
-        let pageTitle = json[apiKeyConstants.title].string ?? appDefaults.emptyString
-        let rows = json[apiKeyConstants.rows].array ?? []
-        
-        var facts = [Fact]()
-        for row in rows {
-            let fact = Fact(withJSON: row)
-            facts.append(fact)
+        if json != JSON.null {
+            // Map JSON Response into Fact Model
+            let pageTitle = json[apiKeyConstants.title].string ?? appDefaults.emptyString
+            let rows = json[apiKeyConstants.rows].array ?? []
+            
+            var facts = [Fact]()
+            for row in rows {
+                let fact = Fact(withJSON: row)
+                facts.append(fact)
+            }
+            completion(.success((facts, pageTitle)))
         }
-        completion(.success((facts, pageTitle)))
     }
 }
